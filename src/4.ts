@@ -23,7 +23,7 @@ class Person {
 }
 
 abstract class House {
-  protected door: false;
+  protected door: boolean = false;
   protected key: Key;
   protected tenants: Person[] = [];
 
@@ -46,7 +46,7 @@ abstract class House {
 class MyHouse extends House {
   openDoor(key: Key): void {
     if (key.getSignature() === this.key.getSignature()) {
-      
+      this.door = true
       console.log('Door open');
     } else {
       console.log('Door closed');
